@@ -18,17 +18,17 @@ void setup() {
 }
 
 static void Auto_park(){
-  int8u ParkDist = 0;
-	int16u Count = 0;
+  unsigned char ParkDist = 0;
+	unsigned short Count = 0;
 	Flags.Parked = FALSE;
   Serial.println("Auto Park begins.");
-  parked = false;
+  Flags.Parked = false;
   forward();
   while(++Count < ITERATIONS) {
 		if (My_ultrasonic.get_distance() > PARKING_DEPTH) {
 			if(++ParkDist > PARKING_DISTANCE) {
 				ParkVehicle();
-				Flags.Parked = TRUE;
+				Flags.Parked = true;
 				return 1;
 			}
 			delayMicroseconds(100);
@@ -40,11 +40,11 @@ static void Auto_park(){
 }
 
 static void ParkVehicle(void) {
-	int8u i;
+	unsigned char i;
 	forward();
 	delayMicroseconds(4000);
 	stop();
-	Flags.Back = TRUE;
+	Flags.Back = true;
 	Strt2Left(Myservo);
 	backward();
 	i = 0;
@@ -72,7 +72,7 @@ static void ParkVehicle(void) {
 	// Mot1Aclk(Myservo); !!!
 	delayMicroseconds(750);
 	stop();
-	Flags.Back = FALSE;
+	Flags.Back = false;
 	delayMicroseconds(2000);
 }
 
@@ -82,6 +82,6 @@ void loop() {
 			// Unpark();
 		else
 			AutoPark();
-		Flags.AutoPark = FALSE;
+		Flags.AutoPark = false;
 	}
 }
