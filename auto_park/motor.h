@@ -17,18 +17,6 @@ const byte RIGHT_PWM = 7; //ENB
 const int speed = 150;
 const int slow_speed = 150;
 
-// for rotation
-const int16_t ZERO_DEGREE = 1500; // Adjust as needed
-
-const int16_t DELTA_ANGLE = 25;   // Adjust as needed
-const int16_t DELTA_SPEED = 25;   // Adjust as needed
-
-const int16_t RIGHT_EXTM = 2000;   // Adjust as needed
-const int16_t LEFT_EXTM = 1025;      // Adjust as needed
-
-const int16_t TURN_RDELAY = 2000;  // Adjust as 6
-const int16_t TURN_LDELAY = 5000;  // Adjust as needed
-
 // int current_angle;
 // int angle = ;
 // int slow_angle = ;

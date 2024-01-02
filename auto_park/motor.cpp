@@ -2,9 +2,6 @@
 #include "motor.h"
 #include "servo.h"
 
-self_servo myservo;
-MY_servo = self_servo();
-
 char command; // 接收序列埠值的變數
 boolean run = false;
 int xPin = 0;  //X軸 接類比A0

@@ -5,16 +5,16 @@
 // I created in the main.ino
 
 int TurnR(Servo& servo) {
-  Strt2Right();
+  Strt2R(servo);
   delay(TURN_RDELAY);
-  Right2Strt();
+  R2Strt(servo);
   return 1;
 }
 
 int TurnL(Servo& servo) {
-  Strt2Left();
+  Strt2L(servo);
   delay(TURN_LDELAY);
-  Left2Strt();
+  L2Strt(servo);
   return 1;
 }
 
